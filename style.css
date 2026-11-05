@@ -1,77 +1,253 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Space Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 1.rem;
-}
-header{
-    background-color: #F9F9FFCC;
-    height: 8vh;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 80px;
-    align-items: center;
+
+:root {
+  --verde: rgb(9, 158, 113);
+  --texto: rgb(247, 253, 251);
+  --texto-suave: rgb(216, 233, 228);
+  --fundo: #02020e;
+  --fundo2:  #070729;
+  --sombra: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
-ul{
-    display: flex;
-    list-style: none;
-    gap: 40px;
-    
-}
-a{
-    text-decoration: none;
-    color: #464554;
-}
-.logo{
-    font-weight: 700;
-}
-.simbolo-logo{
-    color: rgb(99, 9, 158);
-}
-i{
-    color: rgb(99, 9, 158);
-    font-size: 30px;
-    margin: 15px;
-
-}
-icone-login i{
-    color:  rgb(99, 9, 158);
-    font-size: 2rem;
-    margin-left: 15px;
-}
-main{
-    padding: 80px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1{
-    font-size: 4rem;
-
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
 }
 
-.area-inicial{
-    display: flex;
-    gap: 10vw;
-
+h1, .logo {
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.area-imagem{
-    width: 30vw;
+a {
+  text-decoration: none;
+  color: var(--texto-suave);
 }
 
-.area-texto span{
-    font-size: 4rem;
-    color:  rgb(99, 9, 158);
+a:focus-visible {
+  outline: 3px solid var(--verde);
+  outline-offset: 3px;
 }
 
-.area-inicial a{
-    background-color: rgb(99, 9, 158);
-    text-decoration: none;
-    color: aliceblue;
+
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 72px;
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:  #04041a;
+  backdrop-filter: blur(8px);
 }
 
-.area-inicial foco{}
+.logo {
+  font-weight: 700;
+}
+
+.simbolo-logo {
+  color: var(--verde);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+nav a:hover {
+  color: var(--verde);
+}
+
+.icones-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pilula-github {
+   width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--verde);
+  display: grid;
+  place-items: center;
+}
+
+.pilula-github i {
+  color: var(--texto);
+  font-size: 1.5rem;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--verde);
+  display: grid;
+  place-items: center;
+}
+
+.avatar i {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+.area-inicial {
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+}
+
+.area-texto,
+.area-imagem {
+  flex: 1;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.destaque {
+  color: var(--verde);
+}
+
+.descricao {
+  margin-top: 24px;
+  max-width: 50ch;
+  font-size: 1.1rem;
+  color: var(--texto-suave);
+}
+
+
+.botoes-iniciais {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.btn i {
+  font-size: 1rem;
+}
+
+.btn-primario {
+  background: var(--verde);
+  color: #fff;
+}
+
+.btn-primario i {
+  color: #fff;
+}
+
+.btn-secundario {
+  background: var(--fundo2);
+  color: var(--texto);
+  box-shadow: var(--sombra);
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+
+.card-foco {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 480px;
+  padding: 20px;
+  background: var(--fundo2);
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+}
+
+.icone-foco {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #ECECFA;
+  display: grid;
+  place-items: center;
+}
+
+.icone-foco i {
+  color: var(--verde);
+  font-size: 1.2rem;
+}
+
+.foco-titulo {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.foco {
+  color: var(--verde);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.foco-texto {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+
+.area-imagem {
+  position: relative;
+}
+
+.area-imagem img {
+  display: block;
+  width: 100%;
+  height: 480px;
+  object-fit: cover; 
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.area-imagem figcaption {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+}
+
+.area-imagem figcaption i {
+  color: #fff;
+  font-size: 0.85rem;
+}
+

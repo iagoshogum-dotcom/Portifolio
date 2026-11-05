@@ -3,45 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iago | Portfólio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <title>Página</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header> 
-        <div class="logo"><span class="simbolo-logo"> &lt; </span>dev.portfolio <span class="simbolo-logo"> /&gt; </span></div>
-        <nav>
-            <ul>
-                <li><a href="#inicio"> Inicio </a></li>
-                <li><a href="#sobre"> Sobre </a></li>
-                <li><a href="#projetos"> Projetos </a></li>
-                <li><a href="#ferramentas"> Ferramentas </a></li>
-                <li><a href="#contato"> Contato </a></li>
-            </ul>
-        </nav>
-        <div>
-            <i class="fa-brands fa-github"></i>
-            <i class="fa-solid fa-circle-user"></i>
+
+  <header class="cabecalho">
+    <div class="logo">
+      <span class="simbolo-logo">&lt;</span> dev.portfolio <span class="simbolo-logo">/&gt;</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#ferramentas">Ferramentas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="icones-header">
+      <a class="pilula-github" href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a class="avatar" href="#contato" aria-label="Contato">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="area-inicial" id="inicio">
+
+      <div class="area-texto">
+        <h1>
+          Olá, mundo! Sou o <span class="destaque">Iago</span>, aluno de Desenvolvimento de Sistemas no Senac.
+        </h1>
+
+        <p class="descricao">
+          Esta landing page é meu primeiro projeto construído do zero, utilizando apenas HTML e CSS.
+          Cada linha reflete meu amor e entusiasmo por aprender criando.
+        </p>
+
+        <div class="botoes-iniciais">
+          <a class="btn btn-primario" href="#projetos">
+            <i class="fa-solid fa-eye"></i> Ver meus projetos
+          </a>
+          <a class="btn btn-secundario" href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener">
+            <i class="fa-solid fa-terminal"></i> Meu GitHub
+          </a>
         </div>
-    </header>
-    <main>
-        <section class="area-inicial">
-            <div class="area-texto">
-                <h1>Ola Mundo! Sou o <span>Iago</span>, aluno do Senac da turma de desenvolvimento de sitemas</h1>
-                <p>Esta e minha landing page e meu primeiro projeto contruindo do zero ultilizando apenas HTML e CSS, cada linha contem meu amor e entusiamo poe este projeto.</p>
-                <div class="botoes-iniciais">
-                    <a href="Projetos"> <i class="fa-solid fa-eye"></i> Ver meus projetos</a>
-                    <a href="Github"> <i class="fa-solid fa-terminal"></i> Meu Github</a>
-                </div>
 
-                <div>
-                    <i class="fa-solid fa-laptop-code"></i>
-                    <p class="foco-atual"><span class="foco">FOCO ATUAL</span> - Flexbox, Grid & Semantica</p>
-                    <p>Construindo consistencia diaria no codigo e refinado alinhamento visuais na tela.</p>
-                </div>
-            </div>
+        <div class="card-foco">
+          <div class="icone-foco">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <div>
+            <p class="foco-titulo"><span class="foco">Foco atual</span> • Flexbox, Grid &amp; Semântica</p>
+            <p class="foco-texto">Construindo consistência diária no código e refinando alinhamentos visuais na tela.</p>
+          </div>
+        </div>
+      </div>
 
-            <img src="img\bamt12m1e0za1.png" alt="Area de Trabalho e Estudo">
-        </section>
-    </main>
+      <figure class="area-imagem">
+        <img src="img/bamt12m1e0za1.png" alt="Área de trabalho e estudo">
+      </figure>
+
+    </section>
+  </main>
+
 </body>
+</html>

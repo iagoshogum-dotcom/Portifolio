@@ -252,58 +252,164 @@ h1 {
   font-size: 0.85rem;
 }
 
-.card-jornada{
-    background-color: #fff ;
-    place-items: center;
-    display: grid;
-    height: 30px;
-    border-radius: 20px;
-    width: 15%;
-    margin: 0% auto;
-    margin-top: 300px;
-    
-    
-}
-
-.jornada{
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--verde);
-    place-items: center;
-}
-.area-jornada{
+.minha-jornada{
     margin-top: 100px;
-
 }
+
 .titulo-minha-jornada{
- display: flex;
- flex-direction: column;
- align-items: center;
- gap: 5px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;  
 }
+
 .titulo-minha-jornada span{
-    background-color: var(--verde);
+    background-color: var(--fundo2);
     padding: 10px 30px;
     border-radius: 20px;
+    color: var(--verde);
 }
-.titulo-minha-jornada p{
-    color: var(--texto-suave);
-}
-.titulo-minha-jornada h3{
-    font-size: 2rem;
-    color: var(--texto);
 
+
+.titulo-minha-jornada h2{
+    font-size: 2.5rem;
 }
+
+.titulo-minha-jornada p{
+    font-size: 1.3rem;
+    color: var(--texto-suave)
+}
+
 .cards{
-    margin-top: 710px;
+    margin-top: 70px;
     display: flex;
-    justify-content: space-around;   
+    justify-content: space-around;
 }
+
 .card-html{
     background-color: var(--fundo2);
-    padding: 50px;
-    max-width: 33px;
+    padding: 30px;
+    max-width: 30%;
+    border-radius: 15px;
+}
+
+
+.topo-card1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon-html{
+    background-color:  #eec3c3;
+    padding: 17px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    color: #5e0e0e
+    
+}
+
+.fase-1{
+    background-color: #eec3c3;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--cor-texto-principal);
+    font-weight: 500;
+    color: #5e0e0e;
+}
+
+.card-html h3{
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.card-html p {
+    color: var(--texto-suave);
+    font-size: 1rem;
+}
+
+.barra-card1{
+    color: var(--verde);
+    margin-top: 75px;
+}
+
+.barra-card1 span{
+    color: var(--verde);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.topo-card2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon-css{
+    background-color: #89f5e7d3;
+    padding: 18px 15px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    color: #054b40c4;
+}
+
+.em-pratica{
+    background-color: #89f5e7d3;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--cor-texto-principal);
+    font-weight: 500;
+    color: #054b40c4;
+}
+
+.barra-card2{
+    color: var(--verde);
+    margin-top: 50px;
+}
+
+.barra-card2 span{
+    color: var(--verde);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.topo-card3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.topo-card3 i{
+    background-color: #fce5b5d3;
+    padding: 18px 20px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    color: #775711d3;
+}
+
+.conceitos{
+    background-color: #fce5b5d3;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--cor-texto-principal);
+    font-weight: 500;
+    color: #775711d3;
+}
+
+.barra-card3{
+    color: #775711d3;
+    margin-top: 50px;
+}
+
+.barra-card3 span{
+    color: #775711d3;
+    font-weight: 500;
+    font-size: 1rem;
 }

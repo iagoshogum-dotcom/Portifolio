@@ -396,7 +396,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.topo-card1 i{
+.topo-card1 i {
     
     background-color:  #eec3c3;
     width: 40px;
@@ -562,4 +562,167 @@ h1 {
   
 }
 
+.html5{
+  background-color:  #eec3c3;
+  width: 55px;
+  padding: 3px 5px;
+  height: 25px;
+  align-content: center;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: #5e0e0e;
+}
 
+.CSS3{
+  background-color: #3b0606;
+  padding: 3px 5px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--cor-texto-principal);
+  font-weight: 500;
+  color: #df1616;
+}
+.acessibilidade{
+  background-color:  rgb(21, 238, 173);
+  width: 100px;
+  height: 25px;
+  padding: 3px 5px;
+  align-content: center;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: rgb(7, 121, 87);
+}
+
+.forms{
+  background-color: rgb(4, 61, 44);
+  padding: 3px 5px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--cor-texto-principal);
+  color:rgb(12, 182, 131);
+}
+.flexbox{
+  background-color:  #d3c4e9;
+  padding: 3px 5px;
+  width: 90px;
+  height: 25px;
+  align-content: center;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color:  #6822bd;
+}
+
+.micro{
+  background-color: #220f3d;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--cor-texto-principal);
+  color: #7117df;
+}
+.card-trabalhos{
+  background-color: var(--fundo2);
+  padding: 30px;
+  max-width: 100%;
+  border-radius: 15px;
+  overflow: hidden; 
+  margin: 0 20px;
+}
+
+.img-card{
+  position: relative;
+  height: 190px;
+  margin: -30px -30px 25px;      
+  padding: 24px 24px 0;          
+  background-color: #14144a;     
+  overflow: hidden;
+}
+
+.img-card img{
+  display: block;
+  width: 100%;
+  height: auto;                  
+  margin: 0;
+  border-radius: 8px 8px 0 0;    
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.selo1{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: rgb(218, 18, 18);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.selo2{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: var(--verde);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.selo3{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #6d02e7;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.botoes-card{
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.btn-demo,.btn-codigo{
+  flex: 1;                        
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.btn-demo{
+  background-color: var(--verde);
+  color: #fff;
+}
+
+.btn-codigo{
+  background-color: var(--fundo);
+  color: var(--texto);
+}
+.btn-demo,
+.btn-codigo{
+    white-space: nowrap;
+    padding: 10px 8px;
+    font-size: 0.8rem;
+    gap: 6px;
+}
+
+.btn-demo:hover,.btn-codigo:hover{
+  filter: brightness(1.15);
+}
+
+.topo-card1-trabalho{
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 20px;
+}

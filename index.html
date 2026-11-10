@@ -13,6 +13,48 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="cursor"></div>
+  <script>
+  var cursor = document.querySelector('.cursor');
+  var somClick = new Audio('audios/juniorsoundays-ui-sound-24-527861.mp3');
+  somClick.volume = 0.4;
+
+  var ultimoRastro = 0;
+
+  document.addEventListener('mousemove', function(e) {
+    cursor.style.left = (e.pageX - 7.5) + 'px';
+    cursor.style.top = (e.pageY - 7.5) + 'px';
+
+    var agora = Date.now();
+    if (agora - ultimoRastro < 30) return;
+    ultimoRastro = agora;
+
+    var rastro = document.createElement('div');
+    rastro.className = 'rastro';
+    rastro.style.left = (e.pageX - 4) + 'px';
+    rastro.style.top = (e.pageY - 4) + 'px';
+    document.body.appendChild(rastro);
+
+    rastro.addEventListener('animationend', function() {
+      rastro.remove();
+    });
+  });
+
+  document.addEventListener('click', function() {
+    somClick.currentTime = 0;
+    somClick.play();
+
+    cursor.classList.remove('cursor-expand');
+    void cursor.offsetWidth;
+    cursor.classList.add('cursor-expand');
+  });
+
+  cursor.addEventListener('animationend', function(e) {
+    if (e.animationName === 'expandirCursor') {
+      cursor.classList.remove('cursor-expand');
+    }
+  });
+</script>
 
   <header class="cabecalho">
     <div class="logo">

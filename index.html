@@ -1,60 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Iago | Portfólio</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=devices" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=devices" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+    integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="cursor"></div>
   <script>
-  var cursor = document.querySelector('.cursor');
-  var somClick = new Audio('audios/juniorsoundays-ui-sound-24-527861.mp3');
-  somClick.volume = 0.4;
+    var cursor = document.querySelector('.cursor');
+    var somClick = new Audio('audios/juniorsoundays-ui-sound-24-527861.mp3');
+    somClick.volume = 0.4;
 
-  var ultimoRastro = 0;
+    var ultimoRastro = 0;
 
-  document.addEventListener('mousemove', function(e) {
-    cursor.style.left = (e.pageX - 7.5) + 'px';
-    cursor.style.top = (e.pageY - 7.5) + 'px';
+    document.addEventListener('mousemove', function (e) {
+      cursor.style.left = (e.pageX - 7.5) + 'px';
+      cursor.style.top = (e.pageY - 7.5) + 'px';
 
-    var agora = Date.now();
-    if (agora - ultimoRastro < 30) return;
-    ultimoRastro = agora;
+      var agora = Date.now();
+      if (agora - ultimoRastro < 30) return;
+      ultimoRastro = agora;
 
-    var rastro = document.createElement('div');
-    rastro.className = 'rastro';
-    rastro.style.left = (e.pageX - 4) + 'px';
-    rastro.style.top = (e.pageY - 4) + 'px';
-    document.body.appendChild(rastro);
+      var rastro = document.createElement('div');
+      rastro.className = 'rastro';
+      rastro.style.left = (e.pageX - 4) + 'px';
+      rastro.style.top = (e.pageY - 4) + 'px';
+      document.body.appendChild(rastro);
 
-    rastro.addEventListener('animationend', function() {
-      rastro.remove();
+      rastro.addEventListener('animationend', function () {
+        rastro.remove();
+      });
     });
-  });
 
-  document.addEventListener('click', function() {
-    somClick.currentTime = 0;
-    somClick.play();
+    document.addEventListener('click', function () {
+      somClick.currentTime = 0;
+      somClick.play();
 
-    cursor.classList.remove('cursor-expand');
-    void cursor.offsetWidth;
-    cursor.classList.add('cursor-expand');
-  });
-
-  cursor.addEventListener('animationend', function(e) {
-    if (e.animationName === 'expandirCursor') {
       cursor.classList.remove('cursor-expand');
-    }
-  });
-</script>
+      void cursor.offsetWidth;
+      cursor.classList.add('cursor-expand');
+    });
+
+    cursor.addEventListener('animationend', function (e) {
+      if (e.animationName === 'expandirCursor') {
+        cursor.classList.remove('cursor-expand');
+      }
+    });
+  </script>
 
   <header class="cabecalho">
     <div class="logo">
@@ -109,7 +116,8 @@
           </div>
           <div>
             <p class="foco-titulo"><span class="foco">Foco atual</span> • Flexbox, Grid &amp; Semântica</p>
-            <p class="foco-texto">Construindo consistência diária no código e refinando alinhamentos visuais na tela.</p>
+            <p class="foco-texto">Construindo consistência diária no código e refinando alinhamentos visuais na tela.
+            </p>
           </div>
         </div>
       </div>
@@ -119,150 +127,239 @@
       </figure>
 
     </section>
-     <section class="minha-jornada">
+    <section class="minha-jornada" id="sobre">
 
-            <div class="titulo-minha-jornada">
-                <span>MINHA JORNADA</span>
-                <h2>O que aprendi até agora</h2>
-                <p>Passo a passo, consolidando as bases web para construir paginas acessíveis agradáveis</p>
-            </div>
+      <div class="titulo-minha-jornada">
+        <span>MINHA JORNADA</span>
+        <h2>O que aprendi até agora</h2>
+        <p>Passo a passo, consolidando as bases web para construir paginas acessíveis agradáveis</p>
+      </div>
 
-            <div class="cards">
-                <div class="card-html">
-                    <div class="topo-card1">
-                        <i class="fa-solid fa-code"></i>
-                        <span class="fase-1"> Fase 1</span>
-                    </div>
-                    <h3> HTML Semântico </h3>
-                    <p>Uso de tags corretas como &lt;main&gt;, &lt;article&gt;, estruturação de cabeçalhos e formulários acessíveis com labels claras e semântica pura.</p>
+      <div class="cards">
+        <div class="card-html">
+          <div class="topo-card1">
+            <i class="fa-solid fa-code"></i>
+            <span class="fase-1"> Fase 1</span>
+          </div>
+          <h3> HTML Semântico </h3>
+          <p>Uso de tags corretas como &lt;main&gt;, &lt;article&gt;, estruturação de cabeçalhos e formulários
+            acessíveis com labels claras e semântica pura.</p>
 
-                    <div class="barra-card1">
-                        <i class="fa-regular fa-circle-check"></i> <span>Fundação Dominada</span>
-                    </div>
-                </div>
-                <div class="card-html">
-                    <div class="topo-card2">
-                        <i class="fa-brands fa-css3"></i>
-                        <span class="em-pratica"> Em pratica</span>
-                    </div>
-                    <h3> CSS moderno </h3>
-                    <p>Entendimento completo do Modelo de Caixas (Box Model), seletores específicos, variáveis nativas (Custom Properties), tipografia balanceada e contrastes seguros.</p>
-                    <div class="barra-card2">
-                      <i class="fa-solid fa-rotate"></i> <span>Exercicios em andamento</span>
-                    </div>
-                </div>
-                <div class="card-html">
-                    <div class="topo-card3">
-                        <i class="fa-solid fa-computer"></i>
-                        <span class="conceitos"> Conceitos</span>
-                    </div>
-                    <h3> Design Responsivo </h3>
-                    <p>Criação de interfaces que se adaptam naturalmente a telas de smartphones, tablets e notebooks por meio de flexbox e media queries fluidas.</p>
-
-                    <div class="barra-card3">
-                      <i class="fa-solid fa-clock"></i> <span>Proximas metas</span>
-                    </div> 
-                </div>
-            </div>
-            <div class="card-reflexao">  
-              <i class="fa-solid fa-lightbulb"></i> <span>REFLEXAO DO APRENDIZADO</span>
-              <h4>“A transição para tecnologia me ensinou que errar a sintaxe faz parte do
-                processo. Cada erro no console é apenas uma oportunidade de entender a web
-                mais a fundo.”</h4>
-                <div class="usuario">
-                  <div class="iniciais">IE</div>
-                    <div class="tag-estudante">
-                      <p class="nome">Iago Estevão Escobar</p>
-                      <p class="estudante">Estudante Front-End</p>
-                  </div>
-                </div>
-            </div>
-        </section>
-        <section class="minha-jornada trabalhos-iniciais">
-          <div class="titulo-minha-jornada titulo-trabalhos-iniciais">
-            <span> TRABALHOS INICIAIS</span>
-            <h2>Projetos & Experimentos</h2>
-            <p>Resultados reais dos exercícios propostos neste primeiro módulo de aprendizado.</p>
+          <div class="barra-card1">
+            <i class="fa-regular fa-circle-check"></i> <span>Fundação Dominada</span>
+          </div>
         </div>
-
-        <div class="cards">
-            <div class="card-trabalhos">
-              <div class="img-card">
-                <img src="img\Captura de tela 2026-11-10 151252.png" alt="Print tela principal">
-                <span class="selo1">Atividade #01</span>
-              </div>
-                <div class="topo-card1-trabalho">
-                    <span class="html5"> HTML5</span>
-                    <span class="CSS3"> CSS3 Puro</span>
-                </div>
-                <h3> Landing Page Pessoal </h3>
-                <p>Meu primeiro desafio individual:
-                  estruturação semântica limpa, hierarquia
-                  de títulos rigorosa e estilização
-                  customizada sem frameworks.</p>
-
-                  <div class="botoes-card">
-                    <a href="#" class="btn-demo">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo ao vivo
-                    </a>
-                    <a href="#" class="btn-codigo">
-                        <i class="fa-solid fa-code"></i> Ver código
-                    </a>
-                </div>
-            </div>
-            <div class="card-trabalhos">
-              <div class="img-card">
-                <img src="img\Captura de tela 2026-11-10 151252.png" alt="Print tela principal">
-                <span class="selo2">Atividade #02</span>
-              </div>
-                <div class="topo-card1-trabalho">
-                    <span class="acessibilidade"> Acessibilidade</span>
-                    <span class="forms"> Forms HTML5</span>
-                </div>
-                <h3> Formulário de Cadastro
-                  Acessível </h3>
-                <p>Campos estilizados com foco explícito em
-                  usabilidade, contraste de cores e
-                  validações visuais com mensagens nativas
-                  do navegador.</p>
-
-                  <div class="botoes-card">
-                    <a href="#" class="btn-demo">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo ao vivo
-                    </a>
-                    <a href="#" class="btn-codigo">
-                        <i class="fa-solid fa-code"></i> Ver código
-                    </a>
-                </div>
-            </div>
-            <div class="card-trabalhos">
-              <div class="img-card">
-                <img src="img\Captura de tela 2026-11-10 151252.png" alt="Print tela principal">
-                <span class="selo3">Atividade #03</span>
-              </div>
-                <div class="topo-card1-trabalho">
-                    <span class="flexbox"> CSS Flexbox</span>
-                    <span class="micro"> Micro-layouts</span>
-                </div>
-                <h3> Clone de Card de Produto </h3>
-                <p>Exercício prático de hierarquia visual,
-                  espaçamento de elementos internos e
-                  sombras sutis utilizando as propriedades
-                  de Flexbox.</p>
-
-                  <div class="botoes-card">
-                    <a href="#" class="btn-demo">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo ao vivo
-                    </a>
-                    <a href="#" class="btn-codigo">
-                        <i class="fa-solid fa-code"></i> Ver código
-                    </a>
-                </div>
-            </div>
+        <div class="card-html">
+          <div class="topo-card2">
+            <i class="fa-brands fa-css3"></i>
+            <span class="em-pratica"> Em pratica</span>
+          </div>
+          <h3> CSS moderno </h3>
+          <p>Entendimento completo do Modelo de Caixas (Box Model), seletores específicos, variáveis nativas (Custom
+            Properties), tipografia balanceada e contrastes seguros.</p>
+          <div class="barra-card2">
+            <i class="fa-solid fa-rotate"></i> <span>Exercicios em andamento</span>
+          </div>
         </div>
+        <div class="card-html">
+          <div class="topo-card3">
+            <i class="fa-solid fa-computer"></i>
+            <span class="conceitos"> Conceitos</span>
+          </div>
+          <h3> Design Responsivo </h3>
+          <p>Criação de interfaces que se adaptam naturalmente a telas de smartphones, tablets e notebooks por meio de
+            flexbox e media queries fluidas.</p>
 
-        </section>
+          <div class="barra-card3">
+            <i class="fa-solid fa-clock"></i> <span>Proximas metas</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-reflexao">
+        <i class="fa-solid fa-lightbulb"></i> <span>REFLEXAO DO APRENDIZADO</span>
+        <h4>“A transição para tecnologia me ensinou que errar a sintaxe faz parte do
+          processo. Cada erro no console é apenas uma oportunidade de entender a web
+          mais a fundo.”</h4>
+        <div class="usuario">
+          <div class="iniciais">IE</div>
+          <div class="tag-estudante">
+            <p class="nome">Iago Estevão Escobar</p>
+            <p class="estudante">Estudante Front-End</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="minha-jornada trabalhos-iniciais" id="projetos">
+      <div class="titulo-minha-jornada titulo-trabalhos-iniciais">
+        <span> TRABALHOS INICIAIS</span>
+        <h2>Projetos & Experimentos</h2>
+        <p>Resultados reais dos exercícios propostos neste primeiro módulo de aprendizado.</p>
+      </div>
+
+      <div class="cards">
+        <div class="card-trabalhos">
+          <div class="img-card">
+            <img src="img\Captura de tela 2026-11-10 151252.png" alt="Print tela principal">
+            <span class="selo1">Atividade #01</span>
+          </div>
+          <div class="topo-card1-trabalho">
+            <span class="html5"> HTML5</span>
+            <span class="CSS3"> CSS3 Puro</span>
+          </div>
+          <h3> Landing Page Pessoal </h3>
+          <p>Meu primeiro desafio individual:
+            estruturação semântica limpa, hierarquia
+            de títulos rigorosa e estilização
+            customizada sem frameworks.</p>
+
+          <div class="botoes-card">
+            <a href="#" class="btn-demo">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo ao vivo
+            </a>
+            <a href="#" class="btn-codigo">
+              <i class="fa-solid fa-code"></i> Ver código
+            </a>
+          </div>
+        </div>
+        <div class="card-trabalhos">
+          <div class="img-card">
+            <img src="img\Captura de tela 2026-11-10 151252.png" alt="Print tela principal">
+            <span class="selo2">Atividade #02</span>
+          </div>
+          <div class="topo-card1-trabalho">
+            <span class="acessibilidade"> Acessibilidade</span>
+            <span class="forms"> Forms HTML5</span>
+          </div>
+          <h3> Formulário de Cadastro
+            Acessível </h3>
+          <p>Campos estilizados com foco explícito em
+            usabilidade, contraste de cores e
+            validações visuais com mensagens nativas
+            do navegador.</p>
+
+          <div class="botoes-card">
+            <a href="#" class="btn-demo">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo ao vivo
+            </a>
+            <a href="#" class="btn-codigo">
+              <i class="fa-solid fa-code"></i> Ver código
+            </a>
+          </div>
+        </div>
+        <div class="card-trabalhos">
+          <div class="img-card">
+            <img src="img\Captura de tela 2026-11-10 151252.png" alt="Print tela principal">
+            <span class="selo3">Atividade #03</span>
+          </div>
+          <div class="topo-card1-trabalho">
+            <span class="flexbox"> CSS Flexbox</span>
+            <span class="micro"> Micro-layouts</span>
+          </div>
+          <h3> Clone de Card de Produto </h3>
+          <p>Exercício prático de hierarquia visual,
+            espaçamento de elementos internos e
+            sombras sutis utilizando as propriedades
+            de Flexbox.</p>
+
+          <div class="botoes-card">
+            <a href="#" class="btn-demo">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo ao vivo
+            </a>
+            <a href="#" class="btn-codigo">
+              <i class="fa-solid fa-code"></i> Ver código
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="ferramentas" id="ferramentas">
+      <div class="titulo-ferramentas">
+        <span>AMBIENTE DE TRABALHO</span>
+        <h2>Ferramentas no meu dia a dia</h2>
+        <p>O kit básico que me acompanha em todas as sessões de estudo e codificação.</p>
+      </div>
+
+      <div class="cards-ferramentas">
+        <article class="card-ferramenta">
+          <div class="icone-ferramenta">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3>VS Code</h3>
+          <p>Editor principal</p>
+          <span class="tag-ferramenta">Extensões Live Server &amp; Prettier</span>
+        </article>
+
+        <article class="card-ferramenta">
+          <div class="icone-ferramenta">
+            <i class="fa-solid fa-code-branch"></i>
+          </div>
+          <h3>Git Básico</h3>
+          <p>Commits e branches</p>
+          <span class="tag-ferramenta">Controle de versão no terminal</span>
+        </article>
+
+        <article class="card-ferramenta">
+          <div class="icone-ferramenta">
+            <i class="fa-solid fa-ruler-combined"></i>
+          </div>
+          <h3>Figma</h3>
+          <p>Medidas &amp; layout</p>
+          <span class="tag-ferramenta">Inspeção de espaçamentos &amp; cores</span>
+        </article>
+
+        <article class="card-ferramenta">
+          <div class="icone-ferramenta">
+            <i class="fa-solid fa-bug"></i>
+          </div>
+          <h3>DevTools</h3>
+          <p>Inspecionar CSS</p>
+          <span class="tag-ferramenta">Depuração e testes de box-model</span>
+        </article>
+      </div>
+    </section>
+    <section class="contato" id="contato">
+      <div class="icone-contato">
+        <i class="fa-regular fa-message"></i>
+      </div>
+
+      <h2>Vamos conversar?</h2>
+      <p class="texto-contato">
+        Quer trocar uma ideia sobre os estudos de front-end, dar dicas
+        para um iniciante ou simplesmente acompanhar meus projetos?
+      </p>
+
+      <div class="links-contato">
+        <a href="mailto:iagoshogum@gmail.com" class="item-contato">
+          <span class="item-titulo"><i class="fa-regular fa-envelope"></i> E-mail</span>
+          <span class="item-valor">iagoshogum@gmail.com</span>
+          <span class="item-acao"><i class="fa-regular fa-copy"></i> copiar e-mail</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/iago-escobar-813866322/" class="item-contato" target="_blank" rel="noopener">
+          <span class="item-titulo"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+          <span class="item-valor">iago-escobar-813866322</span>
+          <span class="item-acao">conectar <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a href="https://github.com/iagoshogum-dotcom" class="item-contato" target="_blank" rel="noopener">
+          <span class="item-titulo"><i class="fa-brands fa-github"></i> GitHub</span>
+          <span class="item-valor">iagoshogum-dotcom</span>
+          <span class="item-acao">seguir perfil <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+      </div>
+
+      <p class="rodape-contato">
+        Feito com carinho e muito ☕ no meu primeiro exercício de código.
+        <strong>Iago • HTML5 &amp; CSS3 • 2026</strong>
+      </p>
+    </section>
   </main>
+  <footer class="rodape">
+    <p>Iago • Primeiro Projeto HTML &amp; CSS</p>
+    <p>© 2026 Iago. Todos os direitos reservados.</p>
+  </footer>
 
 </body>
+
 </html>

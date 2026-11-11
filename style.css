@@ -161,6 +161,8 @@ nav ul {
 
 nav a:hover {
   color: var(--verde);
+  transform: translateY(-4px);
+  filter: brightness(1.2);
 }
 
 .icones-header {
@@ -270,7 +272,8 @@ h1 {
 }
 
 .btn:hover {
-  filter: brightness(1.1);
+  transform: translateY(-4px);
+  filter: brightness(1.2);
 }
 
 
@@ -726,3 +729,232 @@ h1 {
   gap: 8px;
   margin-bottom: 20px;
 }
+.ferramentas{
+    margin-top: 100px;
+}
+
+.titulo-ferramentas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.titulo-ferramentas span{
+    background-color: var(--fundo2);
+    padding: 8px 24px;
+    border-radius: 20px;
+    color: var(--verde);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.titulo-ferramentas h2{
+    font-size: 2.5rem;
+}
+
+.titulo-ferramentas p{
+    font-size: 1.1rem;
+    color: var(--texto-suave);
+}
+
+.cards-ferramentas{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);   
+    gap: 24px;
+}
+
+.card-ferramenta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;                      
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--fundo2);
+    border-radius: 15px;
+}
+
+.icone-ferramenta{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    background-color: #14144a;
+    display: grid;
+    place-items: center;
+}
+
+.icone-ferramenta i{
+    color: var(--verde);
+    font-size: 1.3rem;
+}
+
+.card-ferramenta h3{
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+}
+
+.card-ferramenta p{
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+.tag-ferramenta{
+    margin-top: 20px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background-color: #14144a;
+    color: var(--texto-suave);
+    font-size: 0.75rem;
+}
+.contato{
+    position: relative;
+    overflow: hidden;                  
+    margin-top: 100px;
+    padding: 60px 40px;
+    background-color: var(--fundo2);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+.contato::before{
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: var(--verde);
+    opacity: 0.15;
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+.icone-contato{
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 16px;
+    background-color: #14144a;
+    display: grid;
+    place-items: center;
+}
+
+.icone-contato i{
+    color: var(--verde);
+    font-size: 1.5rem;
+}
+
+.contato h2{
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.texto-contato{
+    max-width: 50ch;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--texto-suave);
+}
+
+.links-contato{
+    margin: 40px auto;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.item-contato{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 18px 12px;
+    background-color: #14144a;
+    border-radius: 12px;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.item-contato:hover{
+    transform: translateY(-4px);
+    filter: brightness(1.2);
+}
+
+.item-titulo{
+    color: var(--verde);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.item-valor{
+    color: var(--texto);
+    font-size: 0.9rem;
+    word-break: break-all;             
+}
+
+.item-acao{
+    color: var(--texto-suave);
+    font-size: 0.75rem;
+}
+
+.rodape-contato{
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+.rodape-contato strong{
+    color: var(--verde);
+}
+
+@media (max-width: 700px){
+    .links-contato{
+        grid-template-columns: 1fr;
+    }
+}
+
+.rodape{
+    margin-top: 80px;
+    padding: 24px 80px;               
+    display: flex;
+    justify-content: space-between;   
+    align-items: center;
+    background-color: #04041a;        
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+}
+
+@media (max-width: 700px){
+    .rodape{
+        flex-direction: column;       
+        gap: 8px;
+        padding: 24px 20px;
+        text-align: center;
+    }
+}
+
+#inicio{
+    scroll-margin-top: 152px;   
+}
+#sobre{
+    scroll-margin-top: 90px;  
+}
+
+#projetos{
+    scroll-margin-top: 90px;  
+}
+
+#ferramentas{
+    scroll-margin-top: 210px;  
+}
+
+#contato{
+    scroll-margin-top: 172px;  
+}
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iago | Portfólio</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=devices" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+    integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="cursor"></div>
+  <script>
+    var cursor = document.querySelector('.cursor');
+    var somClick = new Audio('audios/juniorsoundays-ui-sound-24-527861.mp3');
+    somClick.volume = 0.4;
+
+    var ultimoRastro = 0;
+
+    document.addEventListener('mousemove', function (e) {
+      cursor.style.left = (e.pageX - 7.5) + 'px';
+      cursor.style.top = (e.pageY - 7.5) + 'px';
+
+      var agora = Date.now();
+      if (agora - ultimoRastro < 30) return;
+      ultimoRastro = agora;
+
+      var rastro = document.createElement('div');
+      rastro.className = 'rastro';
+      rastro.style.left = (e.pageX - 4) + 'px';
+      rastro.style.top = (e.pageY - 4) + 'px';
+      document.body.appendChild(rastro);
+
+      rastro.addEventListener('animationend', function () {
+        rastro.remove();
+      });
+    });
+
+    document.addEventListener('click', function () {
+      somClick.currentTime = 0;
+      somClick.play();
+
+      cursor.classList.remove('cursor-expand');
+      void cursor.offsetWidth;
+      cursor.classList.add('cursor-expand');
+    });
+
+    cursor.addEventListener('animationend', function (e) {
+      if (e.animationName === 'expandirCursor') {
+        cursor.classList.remove('cursor-expand');
+      }
+    });
+  </script>
+    <main>
+            <div class="area-titulo">
+                <i></i>
+                <h1>Portfólio do Iago</h1>
+            </div>
+            <div class="area-email">
+                <input type="email" id="email" placeholder="Email">
+            </div>
+            <div>
+                <input type="password" id="senha">
+                <div class="lembrar-senha">
+                    <input type="checkbox" id="lembrar" placeholder="Email">
+                    <label for="lembrar">Lembrar-me</label>
+                    <a href="#">Esqueceu a senha:</a>
+
+                </div>
+            </div>
+            <div class="area-botao">
+                <button>Acessar</button>
+                <a href="#">Ainda nao possui uma conta</a>
+
+            </div>
+        </form>
+    </main>
+
+</body>

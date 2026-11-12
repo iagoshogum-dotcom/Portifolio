@@ -958,3 +958,187 @@ h1 {
     scroll-margin-top: 172px;  
 }
 
+@media (max-width: 600px){
+
+    /* cursor customizado só faz sentido com mouse */
+    .cursor,
+    .rastro{
+        display: none;
+    }
+
+    * {
+        cursor: auto;
+    }
+
+    /* ---------- cabeçalho ---------- */
+    .cabecalho{
+        height: auto;
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+
+    nav{
+        order: 3;                       /* menu vai para a linha de baixo */
+        width: 100%;
+    }
+
+    nav ul{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    /* o header ficou mais alto, então a rolagem das âncoras precisa de mais folga */
+    #sobre,
+    #projetos,
+    #ferramentas,
+    #contato{
+        scroll-margin-top: 150px;
+    }
+
+    #inicio{
+        scroll-margin-top: 130px;
+    }
+
+    /* ---------- base ---------- */
+    main{
+        padding: 40px 16px;
+    }
+
+    /* ---------- início ---------- */
+    .area-inicial{
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .area-texto,
+    .area-imagem{
+        flex: none;                     /* sem isso, o flex:1 encolhe na coluna */
+        width: 100%;
+    }
+
+    h1,
+    .descricao{
+        text-align: center;
+    }
+
+    .descricao{
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1rem;
+    }
+
+    .botoes-iniciais{
+        justify-content: center;
+    }
+
+    .btn{
+        flex: 1;
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    .card-foco{
+        max-width: 100%;
+        padding: 14px;
+    }
+
+    .area-imagem img{
+        height: 260px;
+    }
+
+    /* ---------- seções com título ---------- */
+    .minha-jornada,
+    .ferramentas,
+    .contato{
+        margin-top: 60px;
+    }
+
+    .titulo-minha-jornada,
+    .titulo-ferramentas{
+        text-align: center;
+    }
+
+    .titulo-minha-jornada h2,
+    .titulo-ferramentas h2{
+        font-size: 1.8rem;
+    }
+
+    .titulo-minha-jornada p,
+    .titulo-ferramentas p{
+        font-size: 1rem;
+    }
+
+    /* ---------- cards ---------- */
+    .cards{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .card-html{
+        max-width: 100%;
+        padding: 24px;
+    }
+
+    .card-trabalhos{
+        max-width: 100%;
+        margin: 0;
+        padding: 20px;                  /* diminuiu de 30px... */
+    }
+
+    .img-card{
+        margin: -20px -20px 20px;       /* ...então a margem negativa acompanha */
+        padding: 20px 20px 0;
+        height: 170px;
+    }
+
+    .botoes-card{
+        flex-direction: column;         /* botões empilhados cabem em qualquer tela */
+    }
+
+    .btn-demo,
+    .btn-codigo{
+        flex: none;
+    }
+
+    .card-reflexao{
+        padding: 16px;
+    }
+
+    /* ---------- ferramentas ---------- */
+    .cards-ferramentas{
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+    .card-ferramenta{
+        padding: 20px 12px;
+    }
+
+    .card-ferramenta h3{
+        font-size: 1.1rem;
+    }
+
+    /* ---------- contato ---------- */
+    .contato{
+        padding: 40px 20px;
+    }
+
+    .contato h2{
+        font-size: 1.6rem;
+    }
+
+    .texto-contato{
+        font-size: 1rem;
+    }
+
+    .links-contato{
+        grid-template-columns: 1fr;
+        margin: 30px auto;
+    }
+}

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Area cadastro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+    integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+  <body>
+  <div class="cursor"></div>
+
+  <section class="palco" id="palco">
+    <div class="cena">
+      <svg viewBox="0 0 400 460" preserveAspectRatio="xMidYMax meet" role="img" aria-label="Esqueleto sentado diante de um notebook">
+
+        <g class="corpo">
+          <!-- coluna: pescoço e lombar (tracejado = vértebras) -->
+          <path class="osso" d="M200 160V206M200 292V345" stroke-width="10" stroke-dasharray="8 5"/>
+
+          <!-- clavícula, esterno e costelas -->
+          <path class="osso" d="M150 208Q200 198 250 208" stroke-width="6"/>
+          <path class="osso" d="M200 212V290" stroke-width="8"/>
+          <path class="osso" stroke-width="5" d="
+            M200 220C170 208 148 220 152 242 M200 220C230 208 252 220 248 242
+            M200 242C170 230 148 242 152 264 M200 242C230 230 252 242 248 264
+            M200 264C172 254 152 264 156 284 M200 264C228 254 248 264 244 284"/>
+
+          <!-- cabeça (fica DEPOIS do tronco para aparecer na frente dele quando for carregada) -->
+          <g class="cabeca">
+            <ellipse cx="200" cy="108" rx="54" ry="50" fill="var(--osso)"/>
+            <rect x="172" y="138" width="56" height="34" rx="9" fill="#dfe7e1"/>
+            <path d="M181 150V170M190 150V170M200 150V170M210 150V170M219 150V170M176 152H224" stroke="#9fb3a8" stroke-width="2" stroke-linecap="round"/>
+            <ellipse cx="180" cy="108" rx="13" ry="15" fill="var(--fundo)"/>
+            <ellipse cx="220" cy="108" rx="13" ry="15" fill="var(--fundo)"/>
+            <path d="M200 124L194 138H206Z" fill="var(--fundo)"/>
+            <g class="pupilas" id="pupilas">
+              <circle class="pupila" cx="180" cy="110" r="4.5" fill="var(--verde)"/>
+              <circle class="pupila" cx="220" cy="110" r="4.5" fill="var(--verde)"/>
+            </g>
+          </g>
+
+          <!-- braço esquerdo: ombro (.braco) e cotovelo (.antebraco) -->
+          <g class="braco">
+            <circle cx="150" cy="208" r="7" fill="var(--osso)"/>
+            <line class="osso" x1="150" y1="208" x2="112" y2="280" stroke-width="7"/>
+            <g class="antebraco">
+              <circle cx="112" cy="280" r="6.5" fill="var(--osso)"/>
+              <line class="osso" x1="112" y1="280" x2="160" y2="332" stroke-width="7"/>
+              <g class="mao">
+                <circle cx="160" cy="332" r="10" fill="var(--osso)"/>
+                <path class="osso" d="M160 332L169 351M160 332L174 347M160 332L178 343" stroke-width="4"/>
+              </g>
+            </g>
+          </g>
+
+          <!-- braço direito: o mesmo desenho, espelhado -->
+          <g transform="translate(400 0) scale(-1 1)">
+            <g class="braco">
+              <circle cx="150" cy="208" r="7" fill="var(--osso)"/>
+              <line class="osso" x1="150" y1="208" x2="112" y2="280" stroke-width="7"/>
+              <g class="antebraco">
+                <circle cx="112" cy="280" r="6.5" fill="var(--osso)"/>
+                <line class="osso" x1="112" y1="280" x2="160" y2="332" stroke-width="7"/>
+                <g class="mao atrasada">
+                  <circle cx="160" cy="332" r="10" fill="var(--osso)"/>
+                  <path class="osso" d="M160 332L169 351M160 332L174 347M160 332L178 343" stroke-width="4"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+
+        <!-- notebook (de costas para quem olha) e mesa: ficam na frente do corpo -->
+        <rect x="120" y="345" width="160" height="75" rx="8" fill="#14144a" stroke="#2a2a7a" stroke-width="2"/>
+        <circle cx="200" cy="382" r="7" fill="var(--verde)" opacity=".85"/>
+        <rect x="-2000" y="418" width="4400" height="2000" fill="#0b0b3a"/>
+        <rect x="-2000" y="418" width="4400" height="4" fill="#2a2a7a"/>
+
+        <!-- balão de fala (desenhado no próprio SVG para acompanhar o tamanho do esqueleto) -->
+         <g class="notas" aria-hidden="true">
+          <text x="70"  y="140" class="nota">♪</text>
+          <text x="320" y="170" class="nota n2">♫</text>
+          <text x="100" y="70"  class="nota n3">♪</text>
+          </g>
+
+        <g class="balao" aria-hidden="true">
+          <rect x="252" y="20" width="140" height="50" rx="10" fill="#fff"/>
+          <polygon points="266,70 278,70 262,84" fill="#fff"/>
+          <text x="264" y="36" class="rotulo">escrevendo…</text>
+          <text x="264" y="56" class="digitado"><tspan id="exemplo"></tspan><tspan class="caret">|</tspan></text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <main class="painel">
+    <form class="login" id="form" novalidate>
+      <div class="area-titulo">
+        <i class="fa-solid fa-skull" aria-hidden="true"></i>
+        <h1>Area para cadastro</h1>
+      </div>
+
+      <div class="area-criacao-email">
+        <p>Cadastro email</p>
+        <input type="email" id="email" placeholder="Email para cadastro" aria-label="E-mail" autocomplete="email">
+      </div>
+      <div class="area-usuario">
+        <p>Cadastro usuario</p>
+        <input type="usuario" id="usuario" placeholder="crie o nome de usuario" aria-label="usuario" autocomplete="username">
+      </div>
+      <hr>
+
+      <div class="area-senha">
+        <p>Criar senha</p>
+        <input type="password" id="senha" placeholder="senha" aria-label="Senha" autocomplete="current-password">
+        <p>Confirmar senha</p>
+        <input type="password" id="senha" placeholder="senha" aria-label="Senha" autocomplete="current-password">
+      </div>
+
+      <div class="area-botao">
+        <button type="submit">Cadastrar</button>
+        <a href="login.html">Ja possui cadastro?</a>
+      </div>
+    </form>
+  </main>
+
+  <script>
+     const palco   = document.getElementById('palco');
+  const email   = document.getElementById('email');
+  const senha   = document.getElementById('senha');
+  const pupilas = document.getElementById('pupilas');
+  const exemplo = document.getElementById('exemplo');
+
+  
+  function olharPara(x, y){
+    pupilas.style.transform = `translate(${x}px, ${y}px)`;
+  }
+  document.addEventListener('mousemove', (e) => {
+    if (palco.classList.contains('digitando')) return;
+    const dx = (e.clientX / innerWidth  - 0.5) * 2;
+    const dy = (e.clientY / innerHeight - 0.5) * 2;
+    olharPara(dx * 4, dy * 5);
+  });
+
+ 
+  const frase = 'iago@exemplo.com';
+  let timerBalao = null;
+  let i = 0;
+
+  function iniciarBalao(){
+    clearInterval(timerBalao);
+    i = 0;
+    timerBalao = setInterval(() => {
+      i = (i + 1) % (frase.length + 10);
+      exemplo.textContent = frase.slice(0, Math.min(i, frase.length));
+    }, 120);
+  }
+  function pararBalao(){
+    clearInterval(timerBalao);
+    exemplo.textContent = '';
+  }
+
+  
+  let cabecaFora = false;
+  let timerFim = null;
+
+  function arremessarCabeca(){
+    clearTimeout(timerFim);
+    palco.classList.remove('devolvendo', 'sem-cabeca');
+    palco.classList.add('arremessando');
+    cabecaFora = true;
+  }
+
+  function devolverCabeca(){
+    if (!cabecaFora) return;
+    clearTimeout(timerFim);
+    palco.classList.remove('arremessando', 'sem-cabeca');
+    palco.classList.add('devolvendo');
+  
+    timerFim = setTimeout(() => {
+      palco.classList.remove('devolvendo');
+      cabecaFora = false;
+    }, 2600);
+  }
+
+  
+  email.addEventListener('focus', () => {
+    palco.classList.add('digitando');
+    olharPara(0, 5);
+    iniciarBalao();
+  });
+  email.addEventListener('blur', () => {
+    palco.classList.remove('digitando');
+    olharPara(0, 0);
+    pararBalao();
+  });
+
+  
+  const musica = new Audio('audios\\They added peak 😭🔥 (Jimmy Jr. Dracula x Fortnite) - Partinacs.mp3');
+  musica.loop = true;
+  musica.volume = 0.5;
+
+  const senhasSecretas = ['thriller', 'triller'];
+  let dancando = false;
+
+  function iniciarDanca(){
+    dancando = true;
+    palco.classList.remove('arremessando');
+    palco.classList.add('sem-cabeca', 'dancando');
+    musica.currentTime = 0;
+    musica.play().catch(() => {});
+  }
+
+  function pararDanca(){
+    dancando = false;
+    palco.classList.remove('dancando');
+    musica.pause();
+  }
+
+  
+  senha.addEventListener('input', () => {
+    const secreta = senhasSecretas.includes(senha.value.trim().toLowerCase());
+    if (secreta && !dancando) iniciarDanca();
+    else if (!secreta && dancando) pararDanca();
+  });
+  senha.addEventListener('focus', arremessarCabeca);
+  senha.addEventListener('blur', () => {
+    pararDanca();
+    devolverCabeca();
+  });
+
+  document.getElementById('form').addEventListener('submit', (e) => e.preventDefault());
+
+  
+  const cursor = document.querySelector('.cursor');
+  const somClick = new Audio('audios/juniorsoundays-ui-sound-24-527861.mp3');
+  somClick.volume = 0.4;
+
+  let ultimoRastro = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = (e.pageX - 7.5) + 'px';
+    cursor.style.top  = (e.pageY - 7.5) + 'px';
+
+    const agora = Date.now();
+    if (agora - ultimoRastro < 30) return;
+    ultimoRastro = agora;
+
+    const rastro = document.createElement('div');
+    rastro.className = 'rastro';
+    rastro.style.left = (e.pageX - 4) + 'px';
+    rastro.style.top  = (e.pageY - 4) + 'px';
+    document.body.appendChild(rastro);
+    rastro.addEventListener('animationend', () => rastro.remove());
+  });
+
+  document.addEventListener('click', () => {
+    somClick.currentTime = 0;
+    somClick.play().catch(() => {});
+
+    cursor.classList.remove('cursor-expand');
+    void cursor.offsetWidth;
+    cursor.classList.add('cursor-expand');
+  });
+
+  cursor.addEventListener('animationend', (e) => {
+    if (e.animationName === 'expandirCursor') {
+      cursor.classList.remove('cursor-expand');
+    }
+  });
+  </script>
+</body>
+</html>

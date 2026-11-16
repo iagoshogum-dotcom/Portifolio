@@ -960,7 +960,7 @@ h1 {
 
 @media (max-width: 600px){
 
-    /* cursor customizado só faz sentido com mouse */
+
     .cursor,
     .rastro{
         display: none;
@@ -979,7 +979,7 @@ h1 {
     }
 
     nav{
-        order: 3;                       /* menu vai para a linha de baixo */
+        order: 3;                   
         width: 100%;
     }
 
@@ -990,7 +990,7 @@ h1 {
         font-size: 0.9rem;
     }
 
-    /* o header ficou mais alto, então a rolagem das âncoras precisa de mais folga */
+    
     #sobre,
     #projetos,
     #ferramentas,
@@ -1002,12 +1002,12 @@ h1 {
         scroll-margin-top: 130px;
     }
 
-    /* ---------- base ---------- */
+   
     main{
         padding: 40px 16px;
     }
 
-    /* ---------- início ---------- */
+   
     .area-inicial{
         flex-direction: column;
         gap: 32px;
@@ -1015,7 +1015,7 @@ h1 {
 
     .area-texto,
     .area-imagem{
-        flex: none;                     /* sem isso, o flex:1 encolhe na coluna */
+        flex: none;                  
         width: 100%;
     }
 
@@ -1049,7 +1049,6 @@ h1 {
         height: 260px;
     }
 
-    /* ---------- seções com título ---------- */
     .minha-jornada,
     .ferramentas,
     .contato{
@@ -1071,7 +1070,7 @@ h1 {
         font-size: 1rem;
     }
 
-    /* ---------- cards ---------- */
+
     .cards{
         flex-direction: column;
         align-items: stretch;
@@ -1087,17 +1086,17 @@ h1 {
     .card-trabalhos{
         max-width: 100%;
         margin: 0;
-        padding: 20px;                  /* diminuiu de 30px... */
+        padding: 20px;                  
     }
 
     .img-card{
-        margin: -20px -20px 20px;       /* ...então a margem negativa acompanha */
+        margin: -20px -20px 20px;     
         padding: 20px 20px 0;
         height: 170px;
     }
 
     .botoes-card{
-        flex-direction: column;         /* botões empilhados cabem em qualquer tela */
+        flex-direction: column;        
     }
 
     .btn-demo,
@@ -1109,7 +1108,7 @@ h1 {
         padding: 16px;
     }
 
-    /* ---------- ferramentas ---------- */
+   
     .cards-ferramentas{
         grid-template-columns: 1fr 1fr;
         gap: 12px;
@@ -1124,7 +1123,7 @@ h1 {
         font-size: 1.1rem;
     }
 
-    /* ---------- contato ---------- */
+   
     .contato{
         padding: 40px 20px;
     }

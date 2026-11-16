@@ -1,8 +1,284 @@
 @import url(style.css);
 
-.area-titulo h1{
-    color: var(--verde);
+:root{
+  --verde: rgb(9,158,113);
+  --texto: rgb(247,253,251);
+  --suave: rgb(216,233,228);
+  --fundo: #02020e;
+  --fundo2: #070729;
+  --borda: #1c1c5e;
+  --osso: #e8efe9;
 }
-.main{
-    ba
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+@keyframes rotacaoCursor {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  
+}
+@keyframes expandirCursor {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+    border-radius: 50%;
+    border-color: #5e0e0e;
+  }
+  50% {
+    opacity: 1;
+    border-radius: 25%;
+    border-color: #eaee0a;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+    border-radius: 0;
+    border-color: #ee0abd;
+  }
+}
+@keyframes sumirRastro {
+  to {
+    opacity: 0;
+    transform: scale(0) rotate(90deg);
+  }
+}
+
+.cursor{
+  width: 15px;
+  height: 15px;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  background-color: var(--verde);
+  pointer-events: none;
+  z-index: 9999;
+  
+
+   &:before{
+    content: '';
+    width: 30px;
+    height: 30px;
+    display:block;
+    border: 1px solid var(--texto);
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotacaoCursor 3s linear infinite;
+    
+  
+  }
+
+  &:after{
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display:block;
+    border: 2px solid rgb(13, 199, 190);
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+  }
+}
+.cursor-expand{
+  &:after{
+    animation: expandirCursor 0.4s ease-out forwards;
+    
+  }
+
+}
+.rastro {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--cor-rastro, var(--verde));
+  pointer-events: none;
+  z-index: 9998;
+  animation: sumirRastro 0.6s ease-out forwards;
+}
+
+
+body{
+  min-height:100vh; display:grid; grid-template-columns:1fr 1fr;
+  font-family:"Inter",sans-serif; background:var(--fundo); color:var(--texto);
+}
+
+/* ---------- lado esquerdo: palco ---------- */
+.palco{
+  position:relative; overflow:hidden;            /* corta a mesa e a cabeça quando saem do palco */
+  min-height:100vh;
+  display:flex; align-items:flex-end; justify-content:center;   /* cola o desenho embaixo */
+  background:radial-gradient(circle at 50% 55%, rgba(9,158,113,.2), transparent 60%), var(--fundo2);
+}
+.cena{ width:min(100%,620px); height:min(100vh,880px); }
+.cena svg{ display:block; width:100%; height:100%; overflow:visible; }
+
+/* ---------- esqueleto: base ---------- */
+.osso{ stroke:var(--osso); stroke-linecap:round; fill:none; }
+.corpo{ animation:respirar 3.2s ease-in-out infinite alternate; }
+.cabeca{ transform-origin:200px 120px; }
+.pupilas{ transition:transform .15s; }
+.pupila{ transform-box:fill-box; transform-origin:center; animation:piscar 5s infinite; }
+.braco{ transform-origin:150px 208px; }       /* eixo = ombro */
+.antebraco{ transform-origin:112px 280px; }   /* eixo = cotovelo */
+
+/* ---------- balão ---------- */
+.balao{ opacity:0; transform:translateY(8px); transition:opacity .3s, transform .3s; }
+.rotulo{ font-size:9px; font-weight:500; fill:var(--verde); }
+.digitado{ font-size:13px; font-weight:600; fill:#02020e; }
+.caret{ fill:var(--verde); animation:pisca 1s steps(1) infinite; }
+
+/* ---------- estado 1: digitando (campo de e-mail) ---------- */
+.digitando:not(.arremessando,.devolvendo) .balao{ opacity:1; transform:none; }
+.digitando:not(.arremessando,.devolvendo) .cabeca{ animation:acenar .5s ease-in-out infinite alternate; }
+.digitando:not(.arremessando,.devolvendo) .mao{ animation:toque .25s ease-in-out infinite alternate; }
+.digitando:not(.arremessando,.devolvendo) .mao.atrasada{ animation-delay:.125s; }
+
+/* ---------- estado 2: senha em foco, ele arremessa a cabeça (1.9s) ---------- */
+.arremessando .braco{     animation:bracoArremesso 1.9s ease-in-out forwards; }
+.arremessando .antebraco{ animation:antebracoArremesso 1.9s ease-in-out forwards; }
+.arremessando .cabeca{    animation:cabecaVoando 1.9s linear forwards; }
+
+/* ---------- estado 3: saiu da senha, ele busca a cabeça embaixo da mesa (2.6s) ---------- */
+.devolvendo .corpo{     animation:agachar 2.6s ease-in-out forwards; }
+.devolvendo .cabeca{    animation:cabecaVolta 2.6s ease-in-out forwards; }
+.devolvendo .braco{     animation:bracoSegura 2.6s ease-in-out forwards; }
+.devolvendo .antebraco{ animation:antebracoSegura 2.6s ease-in-out forwards; }
+
+/* pose "segurar a cabeça": braco 110deg + antebraco 196.4deg leva as mãos até as bochechas */
+@keyframes bracoArremesso{
+  0%{ transform:rotate(0); } 22%,38%{ transform:rotate(110deg); }
+  48%,78%{ transform:rotate(150deg); } 100%{ transform:rotate(0); }
+}
+@keyframes antebracoArremesso{
+  0%{ transform:rotate(0); } 22%,38%{ transform:rotate(196.4deg); }
+  48%,78%{ transform:rotate(40deg); } 100%{ transform:rotate(0); }
+}
+@keyframes cabecaVoando{
+  0%,22%{ transform:none; opacity:1; }
+  38%{  transform:translate(0,-14px); }
+  50%{  transform:translate(-120px,-170px) rotate(-120deg); }
+  68%{  transform:translate(-420px,-250px) rotate(-360deg); }
+  85%{  transform:translate(-800px,-60px) rotate(-640deg); opacity:1; }
+  100%{ transform:translate(-1000px,300px) rotate(-900deg); opacity:0; }
+}
+
+/* o corpo desce 330 e a cabeça sobe o mesmo tanto, então ela fica parada embaixo da mesa */
+@keyframes agachar{
+  0%{ transform:translateY(0); } 25%,45%{ transform:translateY(330px); }
+  72%,100%{ transform:translateY(0); }
+}
+@keyframes cabecaVolta{
+  0%{ transform:translateY(380px); } 25%,45%{ transform:translateY(50px); }
+  72%{ transform:translateY(40px); } 86%{ transform:translateY(-10px); }
+  92%,100%{ transform:translateY(0); }
+}
+@keyframes bracoSegura{
+  0%,40%{ transform:rotate(0); } 50%,92%{ transform:rotate(110deg); } 100%{ transform:rotate(0); }
+}
+@keyframes antebracoSegura{
+  0%,40%{ transform:rotate(0); } 50%,92%{ transform:rotate(196.4deg); } 100%{ transform:rotate(0); }
+}
+
+/* animações que ficam sempre ligadas ou do estado "digitando" */
+@keyframes respirar{ to{ transform:translateY(-3px); } }
+@keyframes piscar{ 0%,94%,100%{ transform:scaleY(1); } 97%{ transform:scaleY(.1); } }
+@keyframes acenar{ from{ transform:rotate(-2deg); } to{ transform:rotate(2deg); } }
+@keyframes toque{ to{ transform:translateY(-5px); } }
+@keyframes pisca{ 50%{ fill:transparent; } }
+
+/* ---------- lado direito: formulário ---------- */
+.painel{ display:grid; place-items:center; padding:24px; }
+.login{
+  width:min(380px,100%); padding:36px 32px;
+  display:flex; flex-direction:column; gap:20px;
+  background:var(--fundo2); border:1px solid var(--borda); border-radius:16px;
+}
+
+.area-titulo{ display:flex; align-items:center; gap:12px; }
+.area-titulo i{
+  flex-shrink:0; width:44px; height:44px; border-radius:12px;
+  display:grid; place-items:center;
+  background:#14144a; color:var(--verde); font-size:1.2rem;
+}
+.area-titulo h1{ font-family:"Plus Jakarta Sans",sans-serif; font-size:1.5rem; font-weight:800; letter-spacing:-.02em; }
+
+input[type="email"],
+input[type="password"]{
+  width:100%; padding:12px 14px;
+  background:var(--fundo); color:var(--texto); border:1px solid var(--borda); border-radius:8px; font:inherit;
+}
+input::placeholder{ color:#6f7aa8; }
+input:focus-visible{ outline:2px solid var(--verde); outline-offset:2px; border-color:var(--verde); }
+
+.lembrar-senha{
+  display:flex; align-items:center; flex-wrap:wrap; gap:8px;
+  margin-top:12px; font-size:.85rem; color:var(--suave);
+}
+.lembrar-senha input{ width:16px; height:16px; margin:0; accent-color:var(--verde); }
+.lembrar-senha label{ cursor:pointer; }
+.lembrar-senha a{ margin-left:auto; }
+
+a{ color:var(--verde); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+a:focus-visible{ outline:2px solid var(--verde); outline-offset:3px; border-radius:4px; }
+
+.area-botao{ display:flex; flex-direction:column; align-items:center; gap:14px; }
+.area-botao a{ font-size:.85rem; }
+button{
+  width:100%; padding:12px; border:0; border-radius:8px; cursor:pointer;
+  background:var(--verde); color:#fff; font:inherit; font-weight:600;
+}
+button:hover{ filter:brightness(1.1); }
+button:focus-visible{ outline:2px solid var(--texto); outline-offset:3px; }
+.nota{ font-size:28px; fill:var(--verde); opacity:0; }
+
+/* ---------- estado 4: dança do Thriller (mão de garra) ---------- */
+.sem-cabeca .cabeca{ opacity:0; }              /* a cabeça continua longe */
+
+.braco,
+.antebraco{ transition:transform .5s cubic-bezier(.3,1.5,.5,1); }   /* entra na pose com um "quique" */
+
+/* braço esquerdo: mão lá no alto, com a garra apontando para cima */
+.palco.dancando .braco{     transform:rotate(52deg); }
+.palco.dancando .antebraco{ transform:rotate(180.5deg); }
+
+/* braço direito (o espelhado): mão mais baixa, como nos zumbis do clipe */
+.palco.dancando .corpo > g[transform] .braco{     transform:rotate(22deg); }
+.palco.dancando .corpo > g[transform] .antebraco{ transform:rotate(220.5deg); }
+
+/* a mão balança no pulso, como se estivesse arranhando o ar */
+.palco.dancando .mao{
+  transform-origin:160px 332px;
+  animation:garra .3s ease-in-out infinite alternate;
+}
+
+/* o corpo inteiro vai de um lado para o outro, levando os braços junto */
+.palco.dancando .corpo{
+  transform-origin:200px 345px;
+  animation:balancar .8s ease-in-out infinite alternate;
+}
+
+@keyframes balancar{
+  from{ transform:rotate(-7deg) translateX(-10px); }
+  to{   transform:rotate(7deg)  translateX(10px); }
+}
+@keyframes garra{
+  from{ transform:rotate(-12deg); }
+  to{   transform:rotate(12deg); }
+}
+@media (max-width:760px){
+  body{ grid-template-columns:1fr; }
+  .palco{ min-height:0; height:48vh; }
+  .cena{ width:min(100%,420px); height:100%; }
+}
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition-duration:.01s !important; }
 }
